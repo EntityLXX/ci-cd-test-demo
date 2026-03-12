@@ -30,12 +30,12 @@ pipeline {
            }
        }
 
-		stage('Deploy to Tomcat') {
+       stage('Deploy to Tomcat') {
            steps {
                bat """
-               if exist "${env.DEPLOY_PATH}\\${env.APP_NAME}" rmdir /s /q "${env.DEPLOY_PATH}\\${env.APP_NAME}"
-               if exist "${env.DEPLOY_PATH}\\${env.WAR_FILE}" del /f /q "${env.DEPLOY_PATH}\\${env.WAR_FILE}"
-               copy /Y "target\\${env.WAR_FILE}" "${env.DEPLOY_PATH}\\${env.WAR_FILE}"
+               if exist "%DEPLOY_PATH%\\%APP_NAME%" rmdir /s /q "%DEPLOY_PATH%\\%APP_NAME%"
+               if exist "%DEPLOY_PATH%\\%WAR_FILE%" del /f /q "%DEPLOY_PATH%\\%WAR_FILE%"
+               copy /Y "target\\%WAR_FILE%" "%DEPLOY_PATH%\\%WAR_FILE%"
                """
            }
        }
