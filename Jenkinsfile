@@ -6,7 +6,7 @@ pipeline {
    }
 
    environment {
-       DEPLOY_PATH = 'D:\\truetomcat\\webapps'
+       DEPLOY_PATH = 'C:\\truetomcat\\webapps'
        APP_NAME = 'ci-cd-test-demo'
        WAR_FILE = 'ci-cd-test-demo.war'
    }
